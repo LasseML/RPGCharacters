@@ -8,6 +8,14 @@ import com.experis_academy.heroclass.HeroClassFactory;
 public class Main {
 
     public static void main(String[] args) {
+        //Alice is a ranger and shows how to level up here
+
+        Hero alice = new Hero("Alice", HeroClassFactory.getHeroClass("RANGER"));
+        alice.printHeroStats();
+        alice.gainExp(500);
+        alice.printHeroStats();
+
+        //Bob is a mage and do a lot of stuff here
         Hero bob = new Hero("Bob", HeroClassFactory.getHeroClass("MAGE"));
         bob.printHeroStats();
         bob.gainExp(1300);
@@ -24,6 +32,18 @@ public class Main {
         bob.printHeroStats();
         bob.printEquipmentStats(bob.getBodySlot());
         System.out.println(bob.attack());
+
+        //Clementine is a warrior
+        Hero clementine = new Hero("Clementine", HeroClassFactory.getHeroClass("WARRIOR"));
+        clementine.printHeroStats();
+        clementine.gainExp(0);
+        clementine.equipItem(EquipmentFactory.getEquipmentFactory("Simple plate armor",
+                1, "PLATE", "BODY"));
+        clementine.printEquipmentStats(clementine.getBodySlot());
+        clementine.printHeroStats();
+        clementine.equipItem(EquipmentFactory.getEquipmentFactory("Simple plate helmet",
+                1, "PLATE", "HEAD"));
+        clementine.printEquipmentStats(clementine.getHeadSlot());
 
 
     }

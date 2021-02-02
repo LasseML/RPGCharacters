@@ -48,16 +48,15 @@ public class ClothEquipment implements Equipment{
 
         @Override
         public int getEquipmentStatDex() {
-            return (int) statModifier * (1 + equipmentLevel * 1);
+            return (int) (statModifier * (1 + equipmentLevel * 1));
         }
 
         @Override
-        public int getEquipmentStatInt() {
-            return (int) statModifier * (3 + equipmentLevel * 2);
+        public int getEquipmentStatInt() { return (int) (statModifier * (3 + equipmentLevel * 2));
         }
 
         @Override
         public int getEquipmentStatHp() {
-            return (int) statModifier * (10 + equipmentLevel * 5);
+            return (int) (statModifier * (10 + equipmentLevel * 5));
         }
 }

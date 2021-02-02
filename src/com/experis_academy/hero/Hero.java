@@ -33,6 +33,7 @@ public class Hero {
     //initiate the hero and set starting stats to stats in class
     public Hero(String name, HeroClass heroClass) {
         heroLevel = 1;
+        nextLevelAtThisExp = expTofirstLevelUp;
         this.heroName = name;
         this.heroClass = heroClass;
         this.heroMaxHealth = heroClass.getStartHp();

@@ -43,12 +43,12 @@ public class LeatherEquipment implements Equipment{
 
         @Override
         public int getEquipmentStatStr() {
-            return (int) statModifier * (1 + equipmentLevel * 1);
+            return (int) (statModifier * (1 + equipmentLevel * 1));
         }
 
         @Override
         public int getEquipmentStatDex() {
-            return (int) statModifier * (3 + equipmentLevel * 2);
+            return (int) (statModifier * (3 + equipmentLevel * 2));
         }
 
         @Override
@@ -58,6 +58,6 @@ public class LeatherEquipment implements Equipment{
 
         @Override
         public int getEquipmentStatHp() {
-            return (int) statModifier * (20 + equipmentLevel * 8);
+            return (int) (statModifier * (20 + equipmentLevel * 8));
         }
 }

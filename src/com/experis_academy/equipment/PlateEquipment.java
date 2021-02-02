@@ -43,12 +43,11 @@ public class PlateEquipment implements Equipment{
 
         @Override
         public int getEquipmentStatStr() {
-            return (int) statModifier * (3 + equipmentLevel * 2);
+            return (int) (statModifier * (3 + equipmentLevel * 2));
         }
 
         @Override
-        public int getEquipmentStatDex() {
-            return (int) statModifier * (1 + equipmentLevel * 1);
+        public int getEquipmentStatDex() { return (int) (statModifier * (1 + equipmentLevel * 1));
         }
 
         @Override
@@ -56,6 +55,6 @@ public class PlateEquipment implements Equipment{
 
         @Override
         public int getEquipmentStatHp() {
-            return (int) statModifier * (30 + equipmentLevel * 12);
+            return (int) (statModifier * (30 + equipmentLevel * 12));
         }
 }
