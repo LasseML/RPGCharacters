@@ -2,6 +2,7 @@ package com.experis_academy.heroclass;
 
 public class HeroClassFactory {
 
+    //Factory to generate heroClass objects, takes a class, as string, and returns a class object
     public static HeroClass getHeroClass(String heroClass){
 
         HeroClass  newHeroClass = new HeroClass();

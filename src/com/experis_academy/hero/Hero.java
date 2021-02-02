@@ -4,8 +4,6 @@ import com.experis_academy.equipment.Equipment;
 import com.experis_academy.equipment.Weapon;
 import com.experis_academy.heroclass.HeroClass;
 
-import java.util.HashMap;
-
 public class Hero {
     private String heroName = "";
     private HeroClass heroClass;
@@ -42,6 +40,7 @@ public class Hero {
         this.heroInt = heroClass.getStartInt();
     }
 
+    //Level up function that adds the level up modifier to the heros stats
     private void levelUp(){
         heroLevel++;
         heroMaxHealth = heroMaxHealth + heroClass.getLevelUpHp();
@@ -49,7 +48,8 @@ public class Hero {
         heroDex = heroDex + heroClass.getLevelUpDex();
         heroInt = heroInt + heroClass.getLevelUpInt();
     }
-
+    //Takes an amount of exp, checks if the amount of exp was enought to level up, if yes calls level up, and runs
+    //itself recursively intil there is no longer enough exp leftover to level up
     public void gainExp(int exp){
         // checks if the hero have enough exp to level up, calculates level and calls level up
         heroExp = heroExp + exp;
@@ -65,7 +65,7 @@ public class Hero {
         nextLevelAtThisExp = nextLevelAtThisExp + (int) (expTofirstLevelUp *
                                                   Math.pow((1 + expLevelRequirementMultiplier), heroLevel - 1 ));
     }
-    // Equipes a weapon, weapons dosent change stats so no unequip method needed
+    // Equips a weapon, weapons dosent change stats so no unequip method needed
     public void equipWeapon(Weapon weapon){
         if (weapon != null && canEquip(weapon, weapon.getWeaponLevel())) {
             System.out.println(heroName + " has equipped the mighty weapon: " + weapon.getWeaponName());
@@ -73,6 +73,8 @@ public class Hero {
         }
     }
 
+    //Takes am equipment piece as arguiment, checks level requirement, unequips items in the slot, equips new item to the
+    //slot instead
     public void equipItem(Equipment equipment){
         if (equipment != null && canEquip(equipment, equipment.getEquipmentLevel())){
 
@@ -95,6 +97,7 @@ public class Hero {
         }
     }
 
+    //takes an equipmentslot ats argument, removes the item in the slot, and removed the stats it gave
     private void unequipItem(Equipment equipment){
         Equipment itemToRemove = null;
         if (equipment.equipmentSlot().equals("BODY")){
@@ -119,6 +122,7 @@ public class Hero {
         }
     }
 
+    //Calculates weapon damage and returns it as int
     public int attack(){
         int damage = 0;
         if (weaponSlot != null){
@@ -136,6 +140,7 @@ public class Hero {
         return heroLevel >= levelRequired;
     }
 
+    //checks if the hero satisfics the level requirements to equip an item
     private boolean canEquip(Object equipment, int itemLevel){
         boolean equippeble = false;
         if(equipment == null){

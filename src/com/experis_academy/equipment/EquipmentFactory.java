@@ -2,6 +2,7 @@ package com.experis_academy.equipment;
 
 public class EquipmentFactory {
 
+    //Factory to generate equiplemt pieces objects
     public static Equipment getEquipmentFactory(String equipmentName,
                                                 int equipmentLevel,
                                                 String equipmentType,

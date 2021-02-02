@@ -44,6 +44,9 @@ public class Main {
         clementine.equipItem(EquipmentFactory.getEquipmentFactory("Simple plate helmet",
                 1, "PLATE", "HEAD"));
         clementine.printEquipmentStats(clementine.getHeadSlot());
+        System.out.println(clementine.attack());
+        clementine.equipWeapon(WeaponFactory.getWeaponFactory("Maul of Bonk", 1, "MELEE"));
+        System.out.println(clementine.attack());
 
 
     }

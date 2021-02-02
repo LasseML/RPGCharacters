@@ -2,6 +2,7 @@ package com.experis_academy.equipment;
 
 public class WeaponFactory {
 
+    //Factory to generate weapon objects, takes a weapon type, as string, and returns a weapon object
     public static Weapon getWeaponFactory(String weaponName, int weaponLevel, String weaponType){
 
         if(weaponType.equalsIgnoreCase("MAGIC")) {
